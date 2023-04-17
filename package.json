@@ -1,0 +1,16 @@
+{
+  "name": "js-bad-coding-practices",
+  "version": "1.0.0",
+  "description": "Javascript Bad coding practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "ES6",
+    "node"
+  ],
+  "author": "@andredoc",
+  "license": "ISC"
+}
