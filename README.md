@@ -1,0 +1,2 @@
+## Javascript Bad coding practices
+ 
