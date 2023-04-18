@@ -9,8 +9,8 @@ class ErrorsInJavascriptCoding {
     //5.2.2 Don't use variadic Array constructor
     ArrayExample1 = new Array(true,4,"Alberto"); // 5.2.2 Use [] in the array instead. Example: ArrayExample2= [true,4,"Alberto"]
 
-    food1 = ['🥗','🍗','🍕'];
-    food2 = ['🍔','🌭','🍟'];
+    food1 = ['salad','chicken','pizza'];
+    food2 = ['hamburguer','hotDog','fries'];
      //***5.2.5 Instead of copy an array with the same reference's point.
      
      copyFood1 = Array.prototype.slice.call(this.food1);
