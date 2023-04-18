@@ -5,7 +5,7 @@ Indications:
 2. To test file write in terminal: node examplesjs/examples.js
 
 # Google Javascript Style Guide
-|  Language features       |    Description  		 		              |    Status     |  
+|  Language features       | Description  		 		                  | Status         |  
 | ------------------------ | ---------------------------------------------|----------------|
 |     5.1.1    	           | Use const and let			 		          | ✅            |            
 |     5.1.2    	           | One variable per declaration			      | ✅            |            
@@ -24,4 +24,5 @@ Indications:
 |     5.10                 | Equality checks  		                      | ✅            |         
 |     5.11.2               | Eval()		                                  | ✅            |          
 |     5.11.3               | Automatic semicolon insertion		          | ✅            |          
-|     Extra    	           | Don't use nested if else		              | ✅            |          
+|     Extra 1.1    	       | Cyclomatic complexity  		              | ✅            |        
+|     Extra 1.2    	       | Cyclomatic complexity  		              | ✅            |          

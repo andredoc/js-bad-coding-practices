@@ -104,11 +104,11 @@ class ErrorsInJavascriptCoding {
         ${a} + ${b} = ${a + b}
         ${a} - ${b} = ${a - b}
         ${a} * ${b} = ${a * b}
-        ${a} / ${b} = ${a / b}`);  //Always use a semicolon in breaklines
+        ${a} / ${b} = ${a / b}`)  //Always use a semicolon in breaklines
     }
 
+    //Extra 1.1: Cyclomatic complexity. Don't use if nested statement 
     guessYearsOld(age, name) {
-        //Extra: Don't use if nested statement 
         if(age < 18) {
             console.log(`${name} is under 18 years old`)
         } else if(age >=18 && age <=21) {
@@ -122,6 +122,60 @@ class ErrorsInJavascriptCoding {
         } else {
             console.log(`${name} has more than 51 years old`)
         }
+    }
+
+    //Extra 1.2: Cyclomatic complexity
+    validateRegistrationForm(name, email, password) {
+        let errors = []; 
+        // Check that name is not empty
+        if (!name) {
+          errors.push("Name is mandatory");
+        }
+        // Check that email has a valid format
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          errors.push("Email is not valid");
+        }
+        // Check that password has at least 8 characters
+        if (password.length < 8) {
+          errors.push("Password must have at least 8 characters");
+        }
+        // Return errors, if there are
+        if (errors.length > 0) {
+          return errors.join("\n");
+        } else {
+          return null;
+        }
+    }
+    //To Minimize cyclomatic complexity*/
+        //Valid name
+    validateName(name, errors) {
+        if (!name) {
+            errors.push("Name is mandatory");
+        }
+    }
+    //Valid email
+    validateEmail(email, errors) {
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            errors.push("Email is not valid");
+        }
+    }
+    //Valid password
+    validatePassword(password, errors) {
+        if (password.length < 8) {
+            errors.push("Password must have at least 8 characters");
+        }
+    }
+    BetterValidateRegistrationForm(name, email, password) {
+        const errors = [];
+
+        validateName(name, errors);
+        validateEmail(email, errors);
+        validatePassword(password, errors);
+      
+        if (errors.length > 0) {
+          return errors.join("\n");
+        }
+        return null;
     }
 
 }; //5.11.3 Don't terminate classes statements with semicolons.
@@ -143,6 +197,8 @@ example.arithmetic(1,2,3);
 console.log(example.getterTest());
 console.log(example.testArrowFunction());
 example.guessYearsOld(9, 'Jesus');
+console.log(example.validateRegistrationForm('Jorge', 'testing@gmail.com', 12345678));
+console.log(example.BetterValidateRegistrationForm('Jorge', 'testing@gmail.com', 12345678));
 
 
 
